@@ -2,6 +2,7 @@ package com.springer.nature.service.impl;
 
 import com.springer.nature.constant.CafeConstant;
 import com.springer.nature.constant.DiscountRange;
+import com.springer.nature.models.Invoice;
 import com.springer.nature.models.Order;
 import com.springer.nature.service.DiscountService;
 
@@ -23,13 +24,19 @@ public class DiscountServiceImpl implements DiscountService {
         return discount;
     }
 
-    public double calculateDiscount(double totalPrice, Order order) {
-        double discount = 0.0d;
-        if (order.getQuantity() >= CafeConstant.DISCOUNT_LIMIT) {
-            discount = 0.25 * totalPrice;
+    @Override
+    public double calculateDiscount(double totalPrice, Invoice invoice) {
+        Boolean result = invoice.allOrders()
+                .stream()
+                .anyMatch(order -> order.getQuantity() >= CafeConstant.DISCOUNT_LIMIT);
+
+        if (result) {
             this.discountRange = DiscountRange.TWENTY_FIVE;
+            return 0.25 * totalPrice;
+        } else {
+            return calculateDiscount(totalPrice);
         }
-        return discount;
+
     }
 
     @Override

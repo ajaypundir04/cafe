@@ -80,7 +80,6 @@ public class MenuService {
                 .map(Variations::getQuantity)
                 .mapToInt(i -> i)
                 .sum();
-
         if (menu.getMenuMap().containsKey(product)) {
             menu.getMenuMap().put(product, menu.getMenuMap().get(product) + quantToModify);
         } else {
@@ -123,22 +122,18 @@ public class MenuService {
     }
 
     /**
+     * @param product    Product to be modified
      * @param variations It is used to add new variation for a particular variations
      */
-    public void registerNewVariation(Variations variations) {
-        Product product = menu.getMenuMap()
-                .keySet()
-                .stream()
-                .filter(p -> p.getVariationsMap().containsKey(keyGeneration(p.getName(), variations.getName())))
-                .findFirst()
-                .get();
-
-
-        if (Objects.nonNull(product)) {
-            product.getVariationsMap().put(keyGeneration(product.getName(), variations.getName()), variations);
-        } else {
-            throw new MenuServiceException("Product Not Available.");
-        }
+    public void registerNewVariation(Product product, Variations variations) {
+        product.getVariations().add(variations);
+        product.getVariationsMap().put(keyGeneration(product.getName(), variations.getName()), variations);
+        menu.getMenuMap().put(product,
+                product.getVariations()
+                        .stream()
+                        .map(Variations::getQuantity)
+                        .mapToInt(i -> i)
+                        .sum());
     }
 
     private String keyGeneration(String productName, String variety) {

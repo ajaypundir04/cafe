@@ -1,5 +1,6 @@
 package com.springer.nature.cafe.service;
 
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.springer.nature.cafe.utils.TestUtils;
 import com.springer.nature.models.Product;
 import com.springer.nature.models.Variations;
@@ -11,6 +12,8 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class MenuServiceTest {
     Product[] products;
@@ -60,7 +63,38 @@ public class MenuServiceTest {
                 variations -> variations.setQuantity(20)
         );
         menuService.addOrUpdateMenu(product);
-        Assert.assertEquals(20,menuService.getVariationsByCode("TL").getQuantity());
+        Assert.assertEquals(20, menuService.getVariationsByCode("TL").getQuantity());
     }
+
+    @Test
+    public void addOrUpdateMenuNewAddingTest() {
+        Product product = products[0];
+        Variations v = new Variations("Test", 10, 10);
+        Set<Variations> existing = product.getVariations();
+        Set<Variations> newSet = new HashSet<>(Arrays.asList(v));
+        product.setVariations(newSet);
+        menuService.addOrUpdateMenu(product);
+        Assert.assertEquals(10, menuService.getVariationsByCode("TT").getQuantity());
+        product.setVariations(existing);
+    }
+
+    @Test
+    public void registerNewVariationTest() {
+        Product product = products[0];
+        Variations v = new Variations("Test", 10, 10);
+        menuService.registerNewVariation(product, v);
+        Assert.assertThat(product.getVariationByCode("TT"),
+                Matchers.samePropertyValuesAs(menuService.getVariationsByCode("TT"))
+        );
+    }
+
+    @Test
+    public void removeProductFromMenuTest() {
+        Product product = products[0];
+        menuService.removeProductFromMenu(product);
+        Assert.assertEquals(0, menuService.getAvailableQuantitiesByProduct("TL"));
+        menuService.addOrUpdateMenu(product);
+    }
+
 
 }
