@@ -1,15 +1,18 @@
 package com.springer.nature.launcher;
 
 import com.springer.nature.constant.CafeConstant;
-import com.springer.nature.printer.InvoicePrinterStrategy;
-import com.springer.nature.printer.TextPrinter;
 import com.springer.nature.models.Invoice;
 import com.springer.nature.models.Order;
 import com.springer.nature.models.Product;
-import com.springer.nature.service.DiscountService;
 import com.springer.nature.printer.InvoicePrinter;
+import com.springer.nature.printer.InvoicePrinterStrategy;
+import com.springer.nature.printer.TextPrinter;
+import com.springer.nature.service.DiscountService;
 import com.springer.nature.service.ProductService;
-import com.springer.nature.service.impl.*;
+import com.springer.nature.service.impl.CafeServiceImpl;
+import com.springer.nature.service.impl.DiscountServiceImpl;
+import com.springer.nature.service.impl.MenuService;
+import com.springer.nature.service.impl.ProductServiceImpl;
 import com.springer.nature.util.FileReader;
 
 import java.io.IOException;
@@ -23,10 +26,9 @@ public class ApplicationLauncher {
         cafeService = initialize();
         List<Order> orders = FileReader.loadOrder("orders.json", CafeConstant.JSON_EXTENSION);
         Invoice invoice = cafeService.processOrder(orders);
-        InvoicePrinter printer=new TextPrinter();
-        printInvoice(invoice,printer);
+        InvoicePrinter printer = new TextPrinter();
+        printInvoice(invoice, printer);
     }
-
 
 
     private static CafeServiceImpl initialize() throws IOException {
@@ -40,7 +42,7 @@ public class ApplicationLauncher {
             menuService.addOrUpdateMenu(p, CafeConstant.DEFAULT_QUANTITY);
         }
         ProductService productService = new ProductServiceImpl();
-        DiscountService discountService=new DiscountServiceImpl();
+        DiscountService discountService = new DiscountServiceImpl();
         CafeServiceImpl cafeService = CafeServiceImpl.getInstance();
         cafeService.setMenuService(menuService);
         cafeService.setDiscountService(discountService);
@@ -49,7 +51,7 @@ public class ApplicationLauncher {
     }
 
     private static void printInvoice(Invoice invoice, InvoicePrinter printer) {
-        InvoicePrinterStrategy invoicePrinterStrategy=new InvoicePrinterStrategy(printer);
+        InvoicePrinterStrategy invoicePrinterStrategy = new InvoicePrinterStrategy(printer);
         invoicePrinterStrategy.prettyPrint(invoice);
     }
 }

@@ -7,7 +7,6 @@ import com.springer.nature.exception.CafeServiceException;
 import com.springer.nature.launcher.ApplicationLauncher;
 import com.springer.nature.models.Order;
 import com.springer.nature.models.Product;
-import com.springer.nature.service.CafeService;
 
 import java.io.IOException;
 import java.net.URL;
@@ -15,6 +14,10 @@ import java.util.List;
 
 public class FileReader {
 
+
+    private FileReader() {
+
+    }
 
     public static Product[] loadProduct(String fileName, String type) {
         Product[] productList = null;
@@ -62,14 +65,8 @@ public class FileReader {
         return null;
     }
 
-
-
     private static URL resourceFileAsUrl(String file) {
         return ApplicationLauncher.class.getClassLoader().getResource(file);
-    }
-
-    private FileReader(){
-
     }
 
 }

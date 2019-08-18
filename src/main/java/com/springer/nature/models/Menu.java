@@ -7,8 +7,7 @@ import java.util.Map;
  * @author Ajay Singh Pundir
  * This class will have the entries of all the products available.
  */
-public class Menu
-{
+public class Menu {
     private Map<Product, Integer> menuMap;
 
     public Menu() {

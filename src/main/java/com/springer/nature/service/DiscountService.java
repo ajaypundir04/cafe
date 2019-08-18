@@ -6,6 +6,8 @@ import com.springer.nature.models.Order;
 public interface DiscountService {
 
     double calculateDiscount(double totalPrice);
+
     double calculateDiscount(double totalPrice, Order order);
+
     DiscountRange getDiscountRange();
 }

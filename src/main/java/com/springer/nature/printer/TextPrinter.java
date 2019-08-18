@@ -8,6 +8,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 public class TextPrinter implements InvoicePrinter {
+
     @Override
     public void prettyPrint(Invoice invoice) {
         System.out.println(String.join("",
