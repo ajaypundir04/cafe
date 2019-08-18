@@ -1,0 +1,53 @@
+[
+  {
+    "name": "Tea",
+    "variations": [
+      {
+        "name": "Masala",
+        "price": 10
+      },
+      {
+        "name": "Ice",
+        "price": 15
+      },
+      {
+        "name": "Lemon",
+        "price": 15
+      }
+    ]
+  },
+  {
+    "name": "Coffee",
+    "variations": [
+      {
+        "name": "Cold",
+        "price": 15
+      },
+      {
+        "name": "Latte",
+        "price": 30
+      },
+      {
+        "name": "Mocha",
+        "price": 40
+      }
+    ]
+  },
+  {
+    "name": "Cold Drinks",
+    "variations": [
+      {
+        "name": "Coke",
+        "price": 20
+      },
+      {
+        "name": "Pepsi",
+        "price": 20
+      },
+      {
+        "name": "Sprite",
+        "price": 15
+      }
+    ]
+  }
+]
