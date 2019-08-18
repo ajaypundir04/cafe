@@ -6,6 +6,7 @@ import com.springer.nature.models.Product;
 import com.springer.nature.models.Variations;
 
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class MenuService {
     private Menu menu;
@@ -20,7 +21,9 @@ public class MenuService {
      * @return available quantity in @int
      */
     public int getAvailableQuantitiesByProduct(String code) {
-        return menu.getMenuMap().getOrDefault(code, 0);
+        Product product = new Product();
+        product.setName(code);
+        return menu.getMenuMap().getOrDefault(product, 0);
 
     }
 
@@ -69,10 +72,15 @@ public class MenuService {
     }
 
     /**
-     * @param product       @{@link Product} is passed for modifying the menu.
-     * @param quantToModify quantity of products to be modified.It can be +ve for add and -ve for delete
+     * @param product @{@link Product} is passed for modifying the menu.
      */
-    public void addOrUpdateMenu(Product product, int quantToModify) {
+    public void addOrUpdateMenu(Product product) {
+        int quantToModify = product.getVariations()
+                .stream()
+                .map(Variations::getQuantity)
+                .mapToInt(i -> i)
+                .sum();
+
         if (menu.getMenuMap().containsKey(product)) {
             menu.getMenuMap().put(product, menu.getMenuMap().get(product) + quantToModify);
         } else {
@@ -94,6 +102,12 @@ public class MenuService {
                 .get();
         if (Objects.nonNull(product)) {
             product.getVariationsMap().put(keyGeneration(product.getName(), variations.getName()), variations);
+            menu.getMenuMap().put(product,
+                    product.getVariations()
+                            .stream()
+                            .map(Variations::getQuantity)
+                            .mapToInt(i -> i)
+                            .sum());
         } else {
             throw new MenuServiceException("Product Not Available.");
         }

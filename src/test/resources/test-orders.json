@@ -1,12 +1,13 @@
 [
   {
-    "quantity": 1,
-    "code": "CL"
-  },
-  {
     "quantity": 3,
     "code": "TI"
   },
+  {
+    "quantity": 1,
+    "code": "CL"
+  },
+
   {
     "quantity": 2,
     "code": "CP"

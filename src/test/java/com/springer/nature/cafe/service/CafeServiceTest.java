@@ -26,7 +26,7 @@ public class CafeServiceTest {
         MenuService menuService = new MenuService();
         Product[] products = TestUtils.readJsonFile("test-product.json", Product[].class);
         Arrays.stream(products).forEach(p -> {
-            menuService.addOrUpdateMenu(p, 30);
+            menuService.addOrUpdateMenu(p);
             p.getVariations().forEach(v -> v.setQuantity(30 / p.getVariations().size()));
         });
 

@@ -35,11 +35,12 @@ public class ApplicationLauncher {
         Product[] products = FileReader.loadProduct("products.json", CafeConstant.JSON_EXTENSION);
         MenuService menuService = new MenuService();
         for (Product p : products) {
+            //menuService.addOrUpdateMenu(p);
             int varietyCount = p.getVariations().size();
             p.getVariations().forEach(variations -> {
                 variations.setQuantity(CafeConstant.DEFAULT_QUANTITY / varietyCount);
             });
-            menuService.addOrUpdateMenu(p, CafeConstant.DEFAULT_QUANTITY);
+            menuService.addOrUpdateMenu(p);
         }
         ProductService productService = new ProductServiceImpl();
         DiscountService discountService = new DiscountServiceImpl();
