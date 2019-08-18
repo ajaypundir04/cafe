@@ -18,7 +18,10 @@ public class TextPrinter implements InvoicePrinter {
                 String.format("%-20s", ""),
                 String.format("%-20s", String.valueOf(Double.valueOf(invoice.getTotalAmount()).intValue()))
         ));
-        System.out.println(String.join("", String.format("%-20s", CafeConstant.DISCOUNT, "-", invoice.getDiscountRange().getDiscountRange()),
+
+        System.out.println(String.join("", String.format("%-20s",String.join("",
+                CafeConstant.DISCOUNT, "-",String.valueOf( invoice.getDiscountRange().getDiscountRange())," %")
+                ),
                 String.format("%-20s", ""),
                 String.format("%-20s", String.valueOf(roundOff(invoice.getDiscount(), 2)))
         ));

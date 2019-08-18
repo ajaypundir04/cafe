@@ -1,14 +1,15 @@
 package com.springer.nature.constant;
 
 public enum DiscountRange {
-    TEN(10), TWENTY(20), TWENTY_FIVE(25);
-    private int discountRange;
 
-    DiscountRange(int discountRange) {
+    ZERO(0.0), TEN(10.0), TWENTY(20.0), TWENTY_FIVE(25.0);
+    private double discountRange;
+
+    DiscountRange(double discountRange) {
         this.discountRange = discountRange;
     }
 
-    public int getDiscountRange() {
+    public double getDiscountRange() {
         return discountRange;
     }
 }
