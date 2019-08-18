@@ -39,10 +39,7 @@ public class CafeServiceImpl implements CafeService {
                         price,
                         orderName(product, order.getCode())
                 );
-               // invoice.setDiscount(discountService.calculateDiscount(invoice.getTotalAmount()));
                 invoice.setTotalAmount(price);
-                //invoice.setDiscountRange(productService.getDiscountRange());
-
             } else {
                 throw new CafeServiceException(CafeConstant.UNAVAILABLE_QUANTITY);
             }

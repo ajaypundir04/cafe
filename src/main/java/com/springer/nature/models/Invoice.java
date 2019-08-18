@@ -1,10 +1,7 @@
 package com.springer.nature.models;
 
-import com.springer.nature.constant.CafeConstant;
 import com.springer.nature.constant.DiscountRange;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -15,7 +12,7 @@ public class Invoice {
     private Map<Order, Double> items;
     private double finalAmount;
     private double discount;
-    private double totalAmount=0.0;
+    private double totalAmount = 0.0;
     private DiscountRange discountRange;
 
     public Invoice() {
@@ -36,7 +33,6 @@ public class Invoice {
     }
 
 
-
     public double getFinalAmount() {
         return this.finalAmount = totalAmount - discount;
     }
@@ -54,7 +50,7 @@ public class Invoice {
     }
 
     public void setTotalAmount(double totalAmount) {
-        this.totalAmount =+ totalAmount;
+        this.totalAmount = this.totalAmount + totalAmount;
     }
 
     public DiscountRange getDiscountRange() {
@@ -65,5 +61,7 @@ public class Invoice {
         this.discountRange = discountRange;
     }
 
-   public Double getPrice (Order order){return items.getOrDefault(order,0.0);}
+    public Double getPrice(Order order) {
+        return items.getOrDefault(order, 0.0);
+    }
 }

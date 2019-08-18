@@ -24,7 +24,7 @@ public class TextPrinter implements InvoicePrinter {
         ));
         System.out.println(String.join("", String.format("%-20s", "Final Amount"),
                 String.format("%-20s", ""),
-                String.format("%-20s", String.valueOf(roundOff(invoice.getFinalAmount(), 2)))
+                String.format("%-20s", String.valueOf(roundOff(invoice.getFinalAmount(), 2)).concat(" INR"))
         ));
     }
 
