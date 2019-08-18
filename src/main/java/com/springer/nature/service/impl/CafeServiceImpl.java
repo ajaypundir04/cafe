@@ -46,7 +46,6 @@ public class CafeServiceImpl implements CafeService {
         }
         invoice.setDiscount(discountService.calculateDiscount(invoice.getTotalAmount()));
         invoice.setDiscountRange(discountService.getDiscountRange());
-        InvoicePrinterFactory.getInvoicePrinter(CafeConstant.PRINT_TEXT).prettyPrint(invoice);
         return invoice;
     }
 
