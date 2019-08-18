@@ -2,7 +2,7 @@
 
 ### Assumptions
 1. Code is unique for every item.
-2. We are checking the available quantity before creating packs.
+2. We are checking the available quantity before executing order.
 
 ### Test
 1. We can run `./gradlew test`  for running test cases
