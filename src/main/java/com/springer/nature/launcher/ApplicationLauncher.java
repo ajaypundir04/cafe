@@ -1,15 +1,16 @@
 package com.springer.nature.launcher;
 
 import com.springer.nature.constant.CafeConstant;
+import com.springer.nature.printer.InvoicePrinterStrategy;
+import com.springer.nature.printer.TextPrinter;
 import com.springer.nature.models.Invoice;
 import com.springer.nature.models.Order;
 import com.springer.nature.models.Product;
 import com.springer.nature.service.DiscountService;
-import com.springer.nature.service.InvoicePrinter;
+import com.springer.nature.printer.InvoicePrinter;
 import com.springer.nature.service.ProductService;
 import com.springer.nature.service.impl.*;
 import com.springer.nature.util.FileReader;
-import com.springer.nature.util.InvoicePrinterFactory;
 
 import java.io.IOException;
 import java.util.List;
@@ -22,8 +23,11 @@ public class ApplicationLauncher {
         cafeService = initialize();
         List<Order> orders = FileReader.loadOrder("orders.json", CafeConstant.JSON_EXTENSION);
         Invoice invoice = cafeService.processOrder(orders);
-        InvoicePrinterFactory.getInvoicePrinter(CafeConstant.PRINT_TEXT).prettyPrint(invoice);
+        InvoicePrinter printer=new TextPrinter();
+        printInvoice(invoice,printer);
     }
+
+
 
     private static CafeServiceImpl initialize() throws IOException {
         Product[] products = FileReader.loadProduct("products.json", CafeConstant.JSON_EXTENSION);
@@ -42,5 +46,10 @@ public class ApplicationLauncher {
         cafeService.setDiscountService(discountService);
         cafeService.setProductService(productService);
         return cafeService;
+    }
+
+    private static void printInvoice(Invoice invoice, InvoicePrinter printer) {
+        InvoicePrinterStrategy invoicePrinterStrategy=new InvoicePrinterStrategy(printer);
+        invoicePrinterStrategy.prettyPrint(invoice);
     }
 }

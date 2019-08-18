@@ -1,9 +1,8 @@
-package com.springer.nature.service.impl;
+package com.springer.nature.printer;
 
 import com.springer.nature.constant.CafeConstant;
 import com.springer.nature.models.Invoice;
 import com.springer.nature.models.Order;
-import com.springer.nature.service.InvoicePrinter;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

@@ -1,4 +1,4 @@
-package com.springer.nature.service;
+package com.springer.nature.printer;
 
 import com.springer.nature.models.Invoice;
 

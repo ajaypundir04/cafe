@@ -8,7 +8,6 @@ import com.springer.nature.models.Product;
 import com.springer.nature.service.CafeService;
 import com.springer.nature.service.DiscountService;
 import com.springer.nature.service.ProductService;
-import com.springer.nature.util.InvoicePrinterFactory;
 
 import java.util.List;
 
@@ -33,7 +32,7 @@ public class CafeServiceImpl implements CafeService {
             int availableQuantity = menuService.getAvailableQuantitiesByVariations(order.getCode());
             if (order.getQuantity() <= availableQuantity) {
                 Product product = menuService.getProductByCode(order.getCode());
-                double price=productService.calculatePrice(order, product);
+                double price = productService.calculatePrice(order, product);
                 invoice.addEntry(
                         order,
                         price,
