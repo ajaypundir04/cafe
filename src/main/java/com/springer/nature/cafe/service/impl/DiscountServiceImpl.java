@@ -1,10 +1,9 @@
-package com.springer.nature.service.impl;
+package com.springer.nature.cafe.service.impl;
 
-import com.springer.nature.constant.CafeConstant;
-import com.springer.nature.constant.DiscountRange;
-import com.springer.nature.models.Invoice;
-import com.springer.nature.models.Order;
-import com.springer.nature.service.DiscountService;
+import com.springer.nature.cafe.constant.CafeConstant;
+import com.springer.nature.cafe.constant.DiscountRange;
+import com.springer.nature.cafe.service.DiscountService;
+import com.springer.nature.cafe.models.Invoice;
 
 /**
  * @author Ajay Singh Pundir

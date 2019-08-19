@@ -1,4 +1,4 @@
-package com.springer.nature.exception;
+package com.springer.nature.cafe.exception;
 
 /**
  * @author Ajay Singh Pundir

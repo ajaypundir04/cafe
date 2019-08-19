@@ -1,4 +1,4 @@
-package com.springer.nature.models;
+package com.springer.nature.cafe.models;
 
 import java.util.Objects;
 

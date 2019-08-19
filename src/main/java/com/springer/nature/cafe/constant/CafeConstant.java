@@ -1,4 +1,4 @@
-package com.springer.nature.constant;
+package com.springer.nature.cafe.constant;
 
 /**
  * @author Ajay Singh Pundir

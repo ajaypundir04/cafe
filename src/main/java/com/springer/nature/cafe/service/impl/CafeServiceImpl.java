@@ -1,13 +1,13 @@
-package com.springer.nature.service.impl;
+package com.springer.nature.cafe.service.impl;
 
-import com.springer.nature.constant.CafeConstant;
-import com.springer.nature.exception.CafeServiceException;
-import com.springer.nature.models.Invoice;
-import com.springer.nature.models.Order;
-import com.springer.nature.models.Product;
-import com.springer.nature.service.CafeService;
-import com.springer.nature.service.DiscountService;
-import com.springer.nature.service.ProductService;
+import com.springer.nature.cafe.exception.CafeServiceException;
+import com.springer.nature.cafe.constant.CafeConstant;
+import com.springer.nature.cafe.models.Invoice;
+import com.springer.nature.cafe.models.Order;
+import com.springer.nature.cafe.models.Product;
+import com.springer.nature.cafe.service.CafeService;
+import com.springer.nature.cafe.service.DiscountService;
+import com.springer.nature.cafe.service.ProductService;
 
 import java.util.List;
 

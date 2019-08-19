@@ -1,9 +1,9 @@
 package com.springer.nature.cafe.service;
 
 import com.springer.nature.cafe.utils.TestUtils;
-import com.springer.nature.models.Order;
-import com.springer.nature.models.Product;
-import com.springer.nature.service.impl.ProductServiceImpl;
+import com.springer.nature.cafe.models.Order;
+import com.springer.nature.cafe.models.Product;
+import com.springer.nature.cafe.service.impl.ProductServiceImpl;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

@@ -1,10 +1,9 @@
 package com.springer.nature.cafe.service;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.springer.nature.cafe.utils.TestUtils;
-import com.springer.nature.models.Product;
-import com.springer.nature.models.Variations;
-import com.springer.nature.service.impl.MenuService;
+import com.springer.nature.cafe.models.Variations;
+import com.springer.nature.cafe.service.impl.MenuService;
+import com.springer.nature.cafe.models.Product;
 import org.hamcrest.Matchers;
 import org.junit.Assert;
 import org.junit.Before;

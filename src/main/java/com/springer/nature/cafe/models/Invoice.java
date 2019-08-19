@@ -1,6 +1,6 @@
-package com.springer.nature.models;
+package com.springer.nature.cafe.models;
 
-import com.springer.nature.constant.DiscountRange;
+import com.springer.nature.cafe.constant.DiscountRange;
 
 import java.util.Collection;
 import java.util.HashMap;

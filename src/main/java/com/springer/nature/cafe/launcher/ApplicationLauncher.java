@@ -1,19 +1,20 @@
-package com.springer.nature.launcher;
+package com.springer.nature.cafe.launcher;
 
-import com.springer.nature.constant.CafeConstant;
-import com.springer.nature.models.Invoice;
-import com.springer.nature.models.Order;
-import com.springer.nature.models.Product;
-import com.springer.nature.printer.InvoicePrinter;
-import com.springer.nature.printer.InvoicePrinterStrategy;
-import com.springer.nature.printer.TextPrinter;
-import com.springer.nature.service.DiscountService;
-import com.springer.nature.service.ProductService;
-import com.springer.nature.service.impl.CafeServiceImpl;
-import com.springer.nature.service.impl.DiscountServiceImpl;
-import com.springer.nature.service.impl.MenuService;
-import com.springer.nature.service.impl.ProductServiceImpl;
-import com.springer.nature.util.FileReader;
+import com.springer.nature.cafe.constant.CafeConstant;
+import com.springer.nature.cafe.service.CafeService;
+import com.springer.nature.cafe.models.Invoice;
+import com.springer.nature.cafe.models.Order;
+import com.springer.nature.cafe.models.Product;
+import com.springer.nature.cafe.printer.InvoicePrinter;
+import com.springer.nature.cafe.printer.InvoicePrinterStrategy;
+import com.springer.nature.cafe.printer.TextPrinter;
+import com.springer.nature.cafe.service.DiscountService;
+import com.springer.nature.cafe.service.ProductService;
+import com.springer.nature.cafe.service.impl.CafeServiceImpl;
+import com.springer.nature.cafe.service.impl.DiscountServiceImpl;
+import com.springer.nature.cafe.service.impl.MenuService;
+import com.springer.nature.cafe.service.impl.ProductServiceImpl;
+import com.springer.nature.cafe.util.FileReader;
 
 import java.io.IOException;
 import java.util.List;
@@ -36,7 +37,7 @@ public class ApplicationLauncher {
 
     /**
      *
-     * @return {@link com.springer.nature.service.CafeService} instance
+     * @return {@link CafeService} instance
      * @throws IOException
      * This methid is used to inject the depenecy required by the cafeService
      */

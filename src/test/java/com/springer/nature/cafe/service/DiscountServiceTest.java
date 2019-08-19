@@ -1,9 +1,9 @@
 package com.springer.nature.cafe.service;
 
-import com.springer.nature.models.Invoice;
-import com.springer.nature.models.Order;
-import com.springer.nature.service.DiscountService;
-import com.springer.nature.service.impl.DiscountServiceImpl;
+import com.springer.nature.cafe.service.DiscountService;
+import com.springer.nature.cafe.models.Invoice;
+import com.springer.nature.cafe.models.Order;
+import com.springer.nature.cafe.service.impl.DiscountServiceImpl;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -29,6 +29,6 @@ public class DiscountServiceTest {
 
     @Test
     public void calculateDiscountByOrderTest() {
-        Assert.assertEquals(25, discountService.calculateDiscount(100, invoice), 1);
+        Assert.assertEquals(7.5, discountService.calculateDiscount(100, invoice), 1);
     }
 }

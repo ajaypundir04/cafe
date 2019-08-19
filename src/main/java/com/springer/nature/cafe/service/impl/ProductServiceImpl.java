@@ -1,10 +1,10 @@
-package com.springer.nature.service.impl;
+package com.springer.nature.cafe.service.impl;
 
-import com.springer.nature.constant.CafeConstant;
-import com.springer.nature.models.Order;
-import com.springer.nature.models.Product;
-import com.springer.nature.models.Variations;
-import com.springer.nature.service.ProductService;
+import com.springer.nature.cafe.constant.CafeConstant;
+import com.springer.nature.cafe.models.Order;
+import com.springer.nature.cafe.models.Product;
+import com.springer.nature.cafe.models.Variations;
+import com.springer.nature.cafe.service.ProductService;
 
 /**
  * @author Ajay Singh Pundir

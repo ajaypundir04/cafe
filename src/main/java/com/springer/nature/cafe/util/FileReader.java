@@ -1,12 +1,12 @@
-package com.springer.nature.util;
+package com.springer.nature.cafe.util;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.springer.nature.constant.CafeConstant;
-import com.springer.nature.exception.CafeServiceException;
-import com.springer.nature.launcher.ApplicationLauncher;
-import com.springer.nature.models.Order;
-import com.springer.nature.models.Product;
+import com.springer.nature.cafe.constant.CafeConstant;
+import com.springer.nature.cafe.exception.CafeServiceException;
+import com.springer.nature.cafe.launcher.ApplicationLauncher;
+import com.springer.nature.cafe.models.Order;
+import com.springer.nature.cafe.models.Product;
 
 import java.io.IOException;
 import java.net.URL;

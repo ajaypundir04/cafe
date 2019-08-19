@@ -1,7 +1,7 @@
-package com.springer.nature.service;
+package com.springer.nature.cafe.service;
 
-import com.springer.nature.models.Order;
-import com.springer.nature.models.Product;
+import com.springer.nature.cafe.models.Order;
+import com.springer.nature.cafe.models.Product;
 
 /**
  * @author Ajay Singh Pundir

@@ -1,12 +1,11 @@
-package com.springer.nature.service.impl;
+package com.springer.nature.cafe.service.impl;
 
-import com.springer.nature.exception.MenuServiceException;
-import com.springer.nature.models.Menu;
-import com.springer.nature.models.Product;
-import com.springer.nature.models.Variations;
+import com.springer.nature.cafe.exception.MenuServiceException;
+import com.springer.nature.cafe.models.Menu;
+import com.springer.nature.cafe.models.Product;
+import com.springer.nature.cafe.models.Variations;
 
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 /**
  * @author Ajay Singh Pundir

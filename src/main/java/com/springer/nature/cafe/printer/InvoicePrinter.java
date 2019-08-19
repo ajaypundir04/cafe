@@ -1,6 +1,6 @@
-package com.springer.nature.printer;
+package com.springer.nature.cafe.printer;
 
-import com.springer.nature.models.Invoice;
+import com.springer.nature.cafe.models.Invoice;
 
 /**
  * @author Ajay Singh Pundir
