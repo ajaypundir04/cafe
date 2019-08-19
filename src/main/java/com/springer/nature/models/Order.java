@@ -2,6 +2,10 @@ package com.springer.nature.models;
 
 import java.util.Objects;
 
+/**
+ * @author Ajay Singh Pundir
+ * It handles the order placed
+ */
 public class Order {
 
     private int quantity;

@@ -6,7 +6,10 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-
+/**
+ * @author Ajay Singh Pundir
+ * This class is the itemized bill generated
+ */
 public class Invoice {
 
     private Map<Order, Double> items;

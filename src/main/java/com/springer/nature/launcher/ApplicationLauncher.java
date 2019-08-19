@@ -18,6 +18,10 @@ import com.springer.nature.util.FileReader;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * @author Ajay Singh Pundir
+ * Entry point of the application
+ */
 public class ApplicationLauncher {
 
     private static CafeServiceImpl cafeService;
@@ -30,7 +34,12 @@ public class ApplicationLauncher {
         printInvoice(invoice, printer);
     }
 
-
+    /**
+     *
+     * @return {@link com.springer.nature.service.CafeService} instance
+     * @throws IOException
+     * This methid is used to inject the depenecy required by the cafeService
+     */
     private static CafeServiceImpl initialize() throws IOException {
         Product[] products = FileReader.loadProduct("products.json", CafeConstant.JSON_EXTENSION);
         MenuService menuService = new MenuService();

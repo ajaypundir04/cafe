@@ -11,6 +11,10 @@ import com.springer.nature.service.ProductService;
 
 import java.util.List;
 
+/**
+ * @author Ajay Singh Pundir
+ * It proceess the order placed
+ */
 public class CafeServiceImpl implements CafeService {
 
     private static CafeServiceImpl cafeService = new CafeServiceImpl();
@@ -25,6 +29,10 @@ public class CafeServiceImpl implements CafeService {
         return cafeService;
     }
 
+    /**
+     * @param orders List of @{@link Order} orders passed for processing
+     * @return @{@link Invoice}
+     */
     @Override
     public Invoice processOrder(List<Order> orders) {
         Invoice invoice = new Invoice();

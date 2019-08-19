@@ -8,6 +8,10 @@ import com.springer.nature.models.Variations;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+/**
+ * @author Ajay Singh Pundir
+ * It deals with the Menu for the cafe
+ */
 public class MenuService {
     private Menu menu;
 

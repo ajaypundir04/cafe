@@ -12,6 +12,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 
+/**
+ * @author Ajay Singh Pundir
+ * Utility class for File handling
+ */
 public class FileReader {
 
 
@@ -19,6 +23,12 @@ public class FileReader {
 
     }
 
+    /**
+     * @param fileName
+     * @param type
+     * @return Product array
+     * It will load the products from product file on the basis of extension
+     */
     public static Product[] loadProduct(String fileName, String type) {
         Product[] productList = null;
         switch (type) {
@@ -31,6 +41,12 @@ public class FileReader {
         return productList;
     }
 
+    /**
+     * @param fileName
+     * @param type
+     * @return List of Order
+     * It will load the list of order from the file on the basis of extension
+     */
     public static List<Order> loadOrder(String fileName, String type) {
         List<Order> orderList = null;
         switch (type) {

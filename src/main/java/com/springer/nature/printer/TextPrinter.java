@@ -7,8 +7,15 @@ import com.springer.nature.models.Order;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
+/**
+ * @author Ajay Singh Pundir
+ * This is the implementation for @{@link InvoicePrinter}
+ */
 public class TextPrinter implements InvoicePrinter {
 
+    /**
+     * @param invoice It is used to print the invoice in the console
+     */
     @Override
     public void prettyPrint(Invoice invoice) {
         System.out.println(String.join("",
@@ -19,8 +26,8 @@ public class TextPrinter implements InvoicePrinter {
                 String.format("%-20s", String.valueOf(Double.valueOf(invoice.getTotalAmount()).intValue()))
         ));
 
-        System.out.println(String.join("", String.format("%-20s",String.join("",
-                CafeConstant.DISCOUNT, "-",String.valueOf( invoice.getDiscountRange().getDiscountRange())," %")
+        System.out.println(String.join("", String.format("%-20s", String.join("",
+                CafeConstant.DISCOUNT, "-", String.valueOf(Double.valueOf(invoice.getDiscountRange().getDiscountRange()).intValue()), " %")
                 ),
                 String.format("%-20s", ""),
                 String.format("%-20s", String.valueOf(roundOff(invoice.getDiscount(), 2)))

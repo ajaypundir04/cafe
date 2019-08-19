@@ -2,7 +2,7 @@ package com.springer.nature.models;
 
 /**
  * @author Ajay Pundir
- * This class will indicate all the avrieties of the products.
+ * This class will indicate all the vrieties of the products.
  */
 public class Variations {
 

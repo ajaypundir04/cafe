@@ -6,10 +6,19 @@ import com.springer.nature.models.Invoice;
 import com.springer.nature.models.Order;
 import com.springer.nature.service.DiscountService;
 
+/**
+ * @author Ajay Singh Pundir
+ * This class deals with the discount calculation for the Invoice
+ */
 public class DiscountServiceImpl implements DiscountService {
 
     private DiscountRange discountRange;
 
+    /**
+     * @param totalPrice
+     * @return discount
+     * This method deals with the discount calculation on the basis of totalPrice
+     */
     @Override
     public double calculateDiscount(double totalPrice) {
         double remaining = totalPrice;
@@ -24,6 +33,12 @@ public class DiscountServiceImpl implements DiscountService {
         return discount;
     }
 
+    /**
+     * @param totalPrice
+     * @param invoice
+     * @return discount
+     * Used for discount calculation on the basis of oder quantity.
+     */
     @Override
     public double calculateDiscount(double totalPrice, Invoice invoice) {
         Boolean result = invoice.allOrders()
@@ -32,11 +47,9 @@ public class DiscountServiceImpl implements DiscountService {
 
         if (result) {
             this.discountRange = DiscountRange.TWENTY_FIVE;
-            return 0.25 * totalPrice;
-        } else {
-            return calculateDiscount(totalPrice);
+            totalPrice -= 0.25 * totalPrice;
         }
-
+        return calculateDiscount(totalPrice);
     }
 
     @Override

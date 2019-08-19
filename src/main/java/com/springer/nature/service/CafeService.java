@@ -5,6 +5,10 @@ import com.springer.nature.models.Order;
 
 import java.util.List;
 
+/**
+ * @author Ajay Singh Pundir
+ * Interface for order processing
+ */
 public interface CafeService {
 
     Invoice processOrder(List<Order> orders);
